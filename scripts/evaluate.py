@@ -22,11 +22,11 @@ def main():
     print("Loading features...")
     X = np.load(os.path.join(FEATURES_DIR, "X.npy"))
     y = np.load(os.path.join(FEATURES_DIR, "y.npy"))
-
+    #Opening the features Directory
     with open(os.path.join(FEATURES_DIR, "labels.json"), "r") as f:
         LABELS = json.load(f)
 
-    # IMPORTANT: same split as training
+    #same split as training
     _, X_test, _, y_test = train_test_split(
         X,
         y,
@@ -59,6 +59,10 @@ def main():
         xticklabels=LABELS,
         yticklabels=LABELS
     )
+
+    #Labeling the confusion matrix, axis, and saving
+    #NOTE: I only create a cm for the Random Forest model in the evaluation step
+    #as it is the best performing model of the three
     plt.xlabel("Predicted")
     plt.ylabel("True")
     plt.title(f"Confusion Matrix – Random Forest")

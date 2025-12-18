@@ -8,7 +8,7 @@ Generates:
 - Accuracy comparison bar chart
 - Metrics summary JSON
 """
-
+#Lots of imports used for this one...
 import os
 import json
 import joblib
@@ -28,7 +28,7 @@ from config import FEATURES_DIR, MODEL_DIR, RESULTS_DIR
 # Helper function: Confusion matrix plotting
 def plot_confusion_matrix(y_true, y_pred, model_name, labels, out_dir="plots"):
     os.makedirs(out_dir, exist_ok=True)
-
+    #Actually creating the confusion matrix
     cm = confusion_matrix(y_true, y_pred)
 
     plt.figure(figsize=(10, 7))

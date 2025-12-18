@@ -11,6 +11,7 @@ from scipy.io import wavfile
 
 DATASET_DIR = os.path.expanduser("~/gtzan_project/data/genres_original")
 
+#Sorting the genres
 GENRES = sorted([
     d for d in os.listdir(DATASET_DIR)
     if os.path.isdir(os.path.join(DATASET_DIR, d))
@@ -21,7 +22,7 @@ GENRE_TO_INDEX = {genre: i for i, genre in enumerate(GENRES)}
 def load_gtzan():
     """Load GTZAN manually from local directories."""
     data = []
-
+    #Cycling through the available genres 
     for genre in GENRES:
         genre_dir = os.path.join(DATASET_DIR, genre)
 

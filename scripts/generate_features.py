@@ -3,13 +3,6 @@ Author: Jose Varela
 Email: jvarela@haverford
 This file generates all features for the GTZAN dataset.
 """
-
-"""
-Author: Jose Varela
-Email: jvarela@haverford
-This file generates features for the GTZAN dataset.
-"""
-
 import os
 import json
 import numpy as np
@@ -53,7 +46,8 @@ def main():
 
     np.save(os.path.join(FEATURE_DIR, "X.npy"), X)
     np.save(os.path.join(FEATURE_DIR, "y.npy"), y)
-
+    #Going through and saving the extracted files and also displaying how many of 
+    #Files are usable as some may be corrupt
     with open(os.path.join(FEATURE_DIR, "labels.json"), "w") as f:
         json.dump(label_map, f, indent=4)
 

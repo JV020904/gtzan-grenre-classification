@@ -1,0 +1,19 @@
+# Python
+__pycache__/
+*.pyc
+
+# Data
+data/
+features/
+*.npy
+*.json
+
+# Models & Outputs
+models/
+results/
+plots/
+
+# Environments
+.env
+*.env
+.conda/

@@ -8,14 +8,17 @@ import os
 #Using this to try to fix an error I was having
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
+#Function to actually run the feature extraction and display update messages
 def run_extract(): 
     print("Running feature extraction...")
     os.system("python3 scripts/generate_features.py")
 
+#Function for training 
 def run_train():
     print("Running model training...")
     os.system("python3 scripts/train_model.py")
 
+#Function for the evaluation step (Creating a final confusion matrix for RF)
 def run_evaluate():
     print("Running model evaluation...")
     os.system("python3 scripts/evaluate.py")
@@ -30,7 +33,7 @@ def main():
         sys.exit(1)
 
     command = sys.argv[1].lower()
-
+    #Conditional statements to run the respective process when prompted
     if command == "extract":
         run_extract()
 
